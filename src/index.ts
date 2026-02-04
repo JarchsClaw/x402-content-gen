@@ -35,7 +35,8 @@ import {
 type Network = `${string}:${string}`;
 const PORT = parseInt(process.env.PORT || '4021', 10);
 const PAY_TO = (process.env.PAY_TO_ADDRESS || '0xede1a30a8b04cca77ecc8d690c552ac7b0d63817') as `0x${string}`;
-const NETWORK: Network = (process.env.X402_NETWORK || 'eip155:8453') as Network; // Base mainnet
+// x402.org facilitator supports Base Sepolia (84532) - use env var for mainnet with CDP facilitator
+const NETWORK: Network = (process.env.X402_NETWORK || 'eip155:84532') as Network;
 const FACILITATOR_URL = process.env.X402_FACILITATOR_URL || 'https://x402.org/facilitator';
 
 // Pricing (in USDC)
